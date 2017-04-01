@@ -1,0 +1,19 @@
+{
+  "name": "socket-board",
+  "version": "1.0.0",
+  "description": "a socket dashboard with gpio integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avandermeer/socketBoard.git"
+  },
+  "author": "Albert van der Meer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avandermeer/socketBoard/issues"
+  },
+  "homepage": "https://github.com/avandermeer/socketBoard#readme"
+}

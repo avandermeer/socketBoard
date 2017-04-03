@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>SocketBoard</title>
+	</head>
+	<body>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+					var socket = io();
+					socket.on('button_press', function(msg) {
+						console.log(msg);
+					});
+		</script>
+	</body>
+</html>

@@ -28,7 +28,7 @@ app.get('/', function(req, res, next){
 
 
 http.listen(1080, function() {
-	console.log('hallo! listening on *:1080');
+	console.log('socketBoard server started; listening on *:1080');
 });
 
 
@@ -37,7 +37,7 @@ config socket
  */
 
 io.on('connection', function(socket){
-	console.log('a user connected');
+	console.log('new user connected');
 	io.emit('button_press', buttonCounter);
 });
 

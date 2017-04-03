@@ -1,0 +1,13 @@
+.counter-container{
+	width: 100%;
+	height: 50vh;
+	border: 1px solid #aaa;
+
+	>div{
+		font-size: 10em;
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}

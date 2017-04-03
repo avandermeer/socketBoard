@@ -6,19 +6,36 @@
 	overflow: hidden;
 	position: relative;
 
-	.fda-element{
+	.fda-element {
 		left: 0px;
 		top: 0px;
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		background-color: $background-color;
+
+
 	}
 
 	.upper {
 		z-index: 100;
+		&.run{
+			animation-name: fall-down;
+			animation-duration: 200ms;
+		}
+
 	}
 	.lower {
 		z-index: 1;
 	}
+
+	@keyframes fall-down {
+		from {
+			transform: translateY(-100%);
+		}
+		to {
+			transform: translateY(0%);
+		}
+	}
+
 }

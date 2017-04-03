@@ -1,6 +1,7 @@
 require('./bootstrap');
 
-angular.module('socketBoardApp', [])
+angular.module('socketBoardApp', ['ngAnimate'])
+
 	.controller('MainController', ['$scope', function(vm) {
 
 		vm.socket = io();
@@ -12,24 +13,18 @@ angular.module('socketBoardApp', [])
 			3: 0
 		};
 
-		vm.newButtonData = {
-			1: 0,
-			2: 0,
-			3: 0
-		};
-
 		vm.socket.on('button_press', function(data) {
-			console.log(data);
-			vm.newButtonData = angular.copy(vm.buttonData);
+			vm.oldButtonData = angular.copy(vm.buttonData);
+			vm.$apply(); //to trigger readding 'run' class
 
-			vm.newButtonData.forEach(function(val, key){
-				if(val != vm.buttonData[key] ){
-					//add animation
+			angular.forEach(data, function(val, key) {
+				if(val != vm.buttonData[key]) {
+					//update only updated value, for triggering the animation
+					vm.buttonData[key] = val;
 				}
 			});
 
-			vm.buttonData = data;
-			vm.$apply();
+			vm.$apply(); //apply scope change
 		});
 
 		vm.$watchCollection('buttonData', function(newVal, oldVal) {

@@ -1,0 +1,24 @@
+
+.fall-down-animation {
+
+	$background-color: white;
+
+	overflow: hidden;
+	position: relative;
+
+	.fda-element{
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: $background-color;
+	}
+
+	.upper {
+		z-index: 100;
+	}
+	.lower {
+		z-index: 1;
+	}
+}
